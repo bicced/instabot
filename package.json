@@ -1,0 +1,122 @@
+{
+	"name": "@social-manager-tools/igbot",
+	"description": "Social Manager Tools: Instagram Bot API",
+	"version": "0.9.18",
+	"main": "lib.js",
+	"author": "Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)",
+	"license": "MIT",
+	"license-docs": "CC BY 4.0",
+	"license-images": "CC BY-NC 4.0",
+	"homepage": "https://socialmanager.tools",
+	"docs": "https://docs.socialmanager.tools",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/social-manager-tools/socialmanagertools-igbot.git"
+	},
+	"bugs": {
+		"url": "https://github.com/social-manager-tools/socialmanagertools-igbot/issues"
+	},
+	"collective": {
+		"type": "opencollective",
+		"url": "https://opencollective.com/social-manager-tools"
+	},
+	"scripts": {
+		"start": "node bot.js --config=\"./configs/config.js\"",
+		"stop": "killall node",
+		"start-pm2": "pm2 start .pm2-process.json",
+		"stop-pm2": "pm2 stop .pm2-process.json",
+		"clean": "rm -rf node_modules package-lock.json && npm install",
+		"update": "rm -f package-lock.json && npm update",
+		"lint": "eslint ./ --cache --ignore-pattern .gitignore",
+		"lint-fix": "eslint ./ --cache --ignore-pattern .gitignore --fix",
+		"git-set-upstream": "git remote add upstream git@github.com:social-manager-tools/socialmanagertools-igbot.git && git fetch upstream",
+		"git-pull-upstream": "git pull upstream master && git pull upstream beta && git pull upstream nightly",
+		"git-switch-master": "git checkout master && git submodule update --init --recursive && git pull --recursive",
+		"git-switch-beta": "git checkout beta && git submodule update --init --recursive && git pull --recursive",
+		"git-switch-nightly": "git checkout nightly && git submodule update --init --recursive && git pull --recursive",
+		"git-pull": "git pull --recursive",
+		"git-ignore-reset": "git rm -r --cached . && git add . && git commit -m \"[Fix] Removing all files in .gitignore\"",
+		"git-postinstall": "npm run docs-init && npm run git-set-upstream && git-switch-nightly",
+		"docker-fix": "chmod +x docker/armv7/* && chmod +x docker/armv8/*",
+		"npm-publish-master-latest": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"latest\"' && npm publish",
+		"npm-publish-master-chromev68": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.4.0\"' && npm publish --tag chromev68",
+		"npm-publish-master-chromev69": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.6.2\"' && npm publish --tag chromev69",
+		"npm-publish-master-chromev70": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.7.0\"' && npm publish --tag chromev70",
+		"npm-publish-master-chromev71": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.9.0\"' && npm publish --tag chromev71",
+		"npm-publish-master-chromev72": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.11.0\"' && npm publish --tag chromev72",
+		"npm-publish-master-chromev73": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.12.2\"' && npm publish --tag chromev73",
+		"npm-publish-master-chromev74": "git checkout master && json -I -f package.json -e 'this.dependencies.puppeteer=\"1.13.0\"' && npm publish --tag chromev74",
+		"npm-publish-beta": "git checkout beta && npm publish --tag beta",
+		"npm-publish-nightly": "git checkout nightly && npm publish --tag nightly",
+		"docs-init": "git submodule add -f https://github.com/social-manager-tools/socialmanagertools-docs.git docs",
+		"docs": "git submodule update --recursive && markserv ./docs/README.md",
+		"test": "jest",
+		"contributors-generate": "all-contributors generate",
+		"devpostinstall": "npm run docs-init && npm run contributors-generate && npm run docker-fix && opencollective-postinstall"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint && npm run contributors-generate"
+		}
+	},
+	"keywords": [
+		"bot",
+		"ptkdev",
+		"instagram",
+		"instagram-lib",
+		"instagram-api",
+		"instagram-bot",
+		"instagram-puppeteer",
+		"instapy",
+		"instabot",
+		"instagress",
+		"puppeteer",
+		"ninjalitics",
+		"socialads",
+		"socialblade",
+		"selenium",
+		"webdriverio"
+	],
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"dependencies": {
+		"puppeteer": "1.13.0",
+		"compare-versions": "latest",
+		"colors": "latest",
+		"path": "latest",
+		"request": "latest",
+		"sqlite3": "latest"
+	},
+	"devDependencies": {
+		"eslint": "latest",
+		"eslint-config-standard": "latest",
+		"eslint-plugin-import": "latest",
+		"eslint-plugin-jsdoc": "latest",
+		"eslint-plugin-jest": "latest",
+		"eslint-plugin-node": "latest",
+		"eslint-plugin-promise": "latest",
+		"eslint-plugin-snakecasejs": "latest",
+		"eslint-plugin-standard": "latest",
+		"eslint-plugin-html": "latest",
+		"all-contributors-cli": "latest",
+		"opencollective": "latest",
+		"opencollective-postinstall": "latest",
+		"pm2": "latest",
+		"json": "latest",
+		"chai": "latest",
+		"jest": "latest",
+		"husky": "latest",
+		"yargs": "latest",
+		"markserv": "latest"
+	},
+	"contributors": [
+		"Massimo [@maXfer75] <maxfer75@hotmail.com> (https://instagram.com/maXfer75)",
+		"Gaetano [@TaniK72] <tanik1972@gmail.com> (https://instagram.com/TaniK72)",
+		"Ilua Chubarov [@Ilya] <agoalofalife@gmail.com> (https://github.com/agoalofalife)",
+		"Julian Xhokaxhiu [@julianxhokaxhiu] (https://github.com/julianxhokaxhiu)",
+		"lecoueyl [@lecoueyl] (https://github.com/lecoueyl)",
+		"Lollymouth [@lollymouth] (https://github.com/lollymouth)",
+		"roNn23 [@roNn23] (https://github.com/roNn23)"
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"projectName": "socialmanagertools-igbot",
+	"projectOwner": "ptkdev",
+	"repoType": "github",
+	"repoHost": "https://github.com",
+	"files": [
+		"README.md"
+	],
+	"imageSize": 100,
+	"commit": true,
+	"contributors": [
+		{
+			"login": "ptkdev",
+			"name": "Patryk Rzucidło",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/442844?v=4",
+			"profile": "https://ptk.dev",
+			"contributions": [
+				"code"
+			]
+		},
+		{
+			"login": "maxfer75",
+			"name": "MaXfer ",
+			"avatar_url": "https://raw.githubusercontent.com/social-manager-tools/socialmanagertools-igbot/master/.github/assets/avatar/maxfer75.jpg",
+			"profile": "https://twitter.com/maxfer75",
+			"contributions": [
+				"design"
+			]
+		},
+		{
+			"login": "TaniK72",
+			"name": "Tanik",
+			"avatar_url": "https://raw.githubusercontent.com/social-manager-tools/socialmanagertools-igbot/master/.github/assets/avatar/tanik72.jpg",
+			"profile": "https://twitter.com/tanik72",
+			"contributions": [
+				"design"
+			]
+		},
+		{
+			"login": "agoalofalife",
+			"name": "Ilua Chubarov",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/15719824?v=4",
+			"profile": "https://github.com/agoalofalife",
+			"contributions": [
+				"code"
+			]
+		},
+		{
+			"login": "julianxhokaxhiu",
+			"name": "Julian Xhokaxhiu",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/1237070?v=4",
+			"profile": "https://julianxhokaxhiu.com",
+			"contributions": [
+				"code"
+			]
+		},
+		{
+			"login": "lecoueyl",
+			"name": "Léonard Lecouey",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/8327054?v=4",
+			"profile": "https://lecouey.me",
+			"contributions": [
+				"code"
+			]
+		},
+		{
+			"login": "lollymouth",
+			"name": "Lollymouth",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/43947950?v=4",
+			"profile": "https://github.com/lollymouth",
+			"contributions": [
+				"code"
+			]
+		},
+		{
+			"login": "roNn23",
+			"name": "roNn23",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/849194?v=4",
+			"profile": "https://github.com/roNn23",
+			"contributions": [
+				"code"
+			]
+		}
+	],
+	"contributorsPerLine": 6
+}
